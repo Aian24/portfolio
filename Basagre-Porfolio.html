@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--CSS Styles -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="assets.css" />
+
+
+    <title>Mark Adrian Basagre</title>
+  </head>
+
+  <body>
+    
+
+    
+    <!-- Navbar -->
+    <nav>
+        <h1>Mark Adrian Basagre</h1>
+        <ul class="navigation">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger-menu" id="burger-menu">
+          <ion-icon class="bars" name="menu-outline"></ion-icon>
+        </button>
+      </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <img
+          src="Basagre.png"
+          alt="Mark Adrian Basagre"
+          loading="lazy"
+          class="hero-img"
+        />
+        <div class="bio">
+          <h2 class="biofirst">About Me</h2>
+          <p class="biosecond">
+            I’m Mark Adrian Basagre, I graduated this July 12, 2023 in the field of Bachelor of Science in Information Technology in Our Lady Of Fatima Antipolo Campus. I am interested applying for Jr. Web development I am familiar with various technologies such as MYSQL, HTML, CSS and PHP, I am always willing to learn new things. I am also a hard-working individual, detailed oriented and trustworthy. I’m always giving my best when it comes to work.
+          </p>
+        </div>
+  </section>
+
+    <!-- More about -->
+    <br> <br>
+    <section>
+        <h2>More About Me</h2>
+        <br> <br>
+        <center>
+          <div class="moreabouts">
+            <div class="moreabout red">
+                <p class="tip">My hobby is playing online games like Mobile legends, Farlight84 and Ran Online.</p>
+            </div>
+            <div class="moreabout blue">
+                <p class="tip">I love Watching Anime like Jujutsu Kaisen, Demon Slayer, HunterxHunter and Also K-dramas.</p>
+            </div>
+            <div class="moreabout green">
+                <p class="tip">My Birthday is September 24, 1998, I am 24 years old I currently living in Antipolo City</p>
+                
+            </div>
+        </div>
+      </center>
+      </section>
+
+    <!-- Skills section -->
+    <section class="skills" id="skills">
+        <h2 class="skill-header">My Skills</h2>
+  
+        <div class="skills-wrapper">
+          <div class="first-set animate__animated animate__pulse">
+            <img
+              src="html-code.png"
+              alt=""
+              loading="lazy"
+              class="icon icon-card"
+            />
+            <img
+              src="css.png"
+              alt=""
+              loading="lazy"
+              class="icon icon-card"
+            />
+            <img
+              src="mysql.png"
+              alt=""
+              loading="lazy"
+              class="icon icon-card"
+            />
+      
+            <img
+              src="php.png"
+              alt=""
+              loading="lazy"
+              class="icon icon-card"
+            />
+        </div>
+      </section>
+
+    <!-- Contact section -->
+    <section>
+      <div class="container">
+        <h2>Contact Me</h2>
+        <form action="contact.php" method="post">
+            <label for="name">Name:</label>
+            <input class="input" type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input class="input" type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <input type="submit" value="Submit" class="button">
+        </form>
+    </div>
+      </section>
+
+    <!-- Social accounts - Fixed to the right -->
+    <div class="socials">
+        <a href="https://twitter.com/aian0924" target="_blank"
+          ><img
+            src="icons8-twitter.gif"
+            alt="Twitter"
+            loading="lazy"
+            class="socicon"
+        /></a>
+        <a href="https://www.instagram.com/aianbasagre/" target="_blank"
+          ><img
+            src="icons8-instagram.gif"
+            alt="Instagram"
+            loading="lazy"
+            class="socicon"
+        /></a>
+        <a href="https://www.facebook.com/Ayang24" target="_blank"
+          ><img
+            src="icons8-facebook.gif"
+            alt="facebook"
+            loading="lazy"
+            class="socicon"
+        /></a>
+        <a href="#" target="_blank"
+          ><img src="icons8-github.gif" alt="Github" class="socicon"
+        /></a>
+
+    <!-- Scroll to top -->
+    <i class="scroll-up" id="scroll-up"
+      ><img
+        src="icons8-double-up.gif"
+        class="socicon up-arrow"
+        alt="scroll-up"
+    </i>
+
+    <!-- Footer section -->
+
+    <!-- Website scripts -->
+    <script src="assets/js/app.js"></script>
+    <script> // scroll to top functionality
+        const scrollUp = document.querySelector("#scroll-up");
+        
+        scrollUp.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+          });
+        });
+        </script>
+
+  </body>
+</html>
