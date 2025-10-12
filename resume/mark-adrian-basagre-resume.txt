@@ -1,0 +1,55 @@
+Mark Adrian Basagre
+Web Developer
+Email: mark.basagre@example.com
+Location: [City, Country]
+Portfolio: https://your-portfolio-url.example
+LinkedIn: https://linkedin.com/in/yourprofile
+GitHub: https://github.com/yourprofile
+
+Summary
+Passionate web developer focused on building responsive, user-friendly, and performant web applications. Strong foundation in modern web technologies with hands-on experience across front-end, back-end, mobile, and e-commerce systems.
+
+Professional Experience
+RustyLopez — Programmer (Current, 1 year and 8 months)
+- Built a web-based system for temporary Acknowledge Report Receipt using HTML, CSS (Bootstrap), PHP, MySQL, and JavaScript.
+- Developed a web-based Shoe Name Picker using HTML, CSS (Tailwind), PHP, MySQL, and JavaScript.
+- Manage RustyLopez E-commerce website (WordPress).
+- Update database of PC count for the Audit department using MySQL Server and RPro9.
+- Troubleshoot computers across departments; reprogram/format Windows OS as needed.
+- Created an Android barcode scanning application (Android Studio, Java).
+- Built lclopezresources.com for daily collection management, integrated with Sunmi V2S POS (V2S) for payment processing and tracking.
+
+Technical Skills
+- Web: HTML, CSS, Tailwind CSS, Bootstrap, JavaScript, PHP, MySQL
+- CMS: WordPress
+- Mobile: Android Studio, Java
+- Systems: POS Systems, Computer Troubleshooting
+- Tools: Git, Linux/Windows
+
+Projects
+LC Lopez Resources Website
+- A comprehensive website for managing daily collections from tenants, integrated with Sunmi V2S POS for efficient payment processing and tracking.
+- Tech: HTML, CSS, PHP, MySQL, JavaScript, POS Integration
+- URL: https://lclopezresources.com
+
+Acknowledge Report Receipt System (Internal)
+- Web-based system for managing and generating temporary acknowledge report receipts to streamline documentation.
+- Tech: HTML, CSS (Bootstrap), PHP, MySQL, JavaScript
+
+Shoe Name Picker System (Internal)
+- Specialized web app to manage and organize shoe names using modern web technologies.
+- Tech: HTML, CSS (Tailwind), PHP, MySQL, JavaScript
+
+Barcode Scanner Application (Internal)
+- Mobile app for efficient barcode scanning and inventory management.
+- Tech: Android Studio, Java
+
+Education
+[Your Degree], [Your School]
+[Year]
+
+Certifications
+[Certification Name], [Provider], [Year] (optional)
+
+References
+Available upon request.
