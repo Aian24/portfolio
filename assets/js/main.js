@@ -1,7 +1,7 @@
-/* Year */
+// Year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-/* Mobile menu toggle */
+// Mobile menu toggle
 const mobileBtn = document.getElementById('mobileMenuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 
@@ -16,21 +16,7 @@ if (mobileBtn && mobileMenu) {
   });
 }
 
-/* Reveal on scroll (Tailwind classes only) */
-const revealElements = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.remove('opacity-0', 'translate-y-3');
-      entry.target.classList.add('animate-fadeUp');
-      io.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-
-revealElements.forEach(el => io.observe(el));
-
-/* Smooth scroll offset for sticky header */
+// Smooth scroll offset for sticky header
 const header = document.querySelector('header');
 const headerHeight = header ? header.offsetHeight : 0;
 
@@ -46,60 +32,85 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-/* Spotlight effect on hero image */
-document.querySelectorAll('.spotlight').forEach(container => {
-  const overlay = container.querySelector('.spotlight-overlay');
-  if (!overlay) return;
-
-  const updateSpotlight = (x, y) => {
-    overlay.style.background = `
-      radial-gradient(200px circle at ${x}px ${y}px, rgba(255,255,255,0.18), rgba(255,255,255,0.0) 60%),
-      radial-gradient(700px circle at 10% 10%, rgba(59,181,255,0.10), transparent 45%),
-      radial-gradient(700px circle at 90% 20%, rgba(240,171,252,0.12), transparent 45%)
-    `;
-  };
-
-  // Initial center
-  const rect = container.getBoundingClientRect();
-  updateSpotlight(rect.width / 2, rect.height / 2);
-
-  container.addEventListener('mousemove', (e) => {
-    const bounds = container.getBoundingClientRect();
-    const x = e.clientX - bounds.left;
-    const y = e.clientY - bounds.top;
-    updateSpotlight(x, y);
+// Active navigation highlighting
+function updateActiveNav() {
+  const sections = ['about', 'experience', 'projects', 'contact'];
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  let currentSection = '';
+  
+  sections.forEach(sectionId => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const rect = section.getBoundingClientRect();
+      const offset = 150; // Offset for better detection
+      
+      if (rect.top <= offset && rect.bottom >= offset) {
+        currentSection = sectionId;
+      }
+    }
   });
-
-  container.addEventListener('mouseleave', () => {
-    const r = container.getBoundingClientRect();
-    updateSpotlight(r.width / 2, r.height / 2);
+  
+  // Update nav links
+  navLinks.forEach(link => {
+    const section = link.getAttribute('data-section');
+    if (section === currentSection) {
+      link.classList.add('text-white', 'font-semibold');
+      link.classList.remove('text-slate-400');
+    } else {
+      link.classList.remove('text-white', 'font-semibold');
+      link.classList.add('text-slate-400');
+    }
   });
+}
+
+// Update on scroll
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      updateActiveNav();
+      ticking = false;
+    });
+    ticking = true;
+  }
 });
 
-/* Email confirmation modal */
-const emailModal = document.getElementById('emailModal');
-const openEmailModalBtn = document.getElementById('openEmailModal');
-const cancelEmailModalBtn = document.getElementById('cancelEmailModal');
-const emailBackdrop = document.getElementById('emailModalBackdrop');
+// Update on page load
+updateActiveNav();
 
-const closeEmailModal = () => {
-  if (!emailModal) return;
-  emailModal.classList.add('hidden');
-};
-const openEmailModal = () => {
-  if (!emailModal) return;
-  emailModal.classList.remove('hidden');
+// Scroll animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
 };
 
-if (openEmailModalBtn) {
-  openEmailModalBtn.addEventListener('click', openEmailModal);
-}
-if (cancelEmailModalBtn) {
-  cancelEmailModalBtn.addEventListener('click', closeEmailModal);
-}
-if (emailBackdrop) {
-  emailBackdrop.addEventListener('click', closeEmailModal);
-}
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeEmailModal();
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Observe sections and cards
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('section > div');
+  const cards = document.querySelectorAll('#projects > div > div > div, #experience > div > div > div');
+  
+  sections.forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    observer.observe(section);
+  });
+  
+  cards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = `opacity 0.6s ease-out ${index * 0.1}s, transform 0.6s ease-out ${index * 0.1}s`;
+    observer.observe(card);
+  });
 });
