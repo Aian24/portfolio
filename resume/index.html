@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Resume — Mark Adrian Basagre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,500;700&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 400: '#3bb5ff', 500: '#159df2' }
+          },
+          fontFamily: {
+            sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
+            serif: ['Fraunces', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    @page {
+      margin: 16mm;
+    }
+
+    @media print {
+      @page {
+        margin: 10mm;
+        size: auto;
+      }
+
+      body {
+        background-color: white !important;
+        color: black !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      /* Hide non-print elements */
+      .no-print,
+      .print-plain {
+        display: none !important;
+      }
+
+      /* Reset container styles */
+      .resume-bg {
+        background: white !important;
+      }
+
+      .card-frame {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        padding: 0 !important;
+        margin-bottom: 20px !important;
+        break-inside: avoid;
+      }
+
+      /* Flatten Layout */
+      .grid,
+      .md\:grid-cols-3 {
+        display: block !important;
+      }
+
+      .md\:col-span-1,
+      .md\:col-span-2 {
+        width: 100% !important;
+        display: block !important;
+      }
+
+      /* Text Visibility Force - High Specidicity */
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      p,
+      span,
+      div,
+      li,
+      a {
+        color: #000 !important;
+        text-shadow: none !important;
+        filter: none !important;
+      }
+
+      /* Reset specific Tailwind text colors */
+      [class*="text-"] {
+        color: #000 !important;
+      }
+
+      /* Borders */
+      .section-line {
+        background: #000 !important;
+        height: 1px !important;
+        opacity: 0.5;
+        width: 100% !important;
+      }
+
+      /* Links */
+      a {
+        text-decoration: none !important;
+        color: #000 !important;
+      }
+
+      /* Misc */
+      img {
+        filter: none !important;
+      }
+    }
+
+    .resume-bg {
+      background:
+        radial-gradient(800px 500px at 85% -10%, rgba(34, 211, 238, 0.12), transparent 60%),
+        radial-gradient(900px 500px at 10% 0%, rgba(245, 158, 11, 0.12), transparent 55%),
+        #0b0f14;
+    }
+
+    .card-frame {
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      background: rgba(15, 20, 28, 0.7);
+      backdrop-filter: blur(12px);
+    }
+
+    .section-line {
+      background: linear-gradient(90deg, rgba(251, 191, 36, 0.8), rgba(34, 211, 238, 0.6), transparent);
+    }
+  </style>
+  <meta property="og:image" content="https://screenshot.cosine.page?url=https://jr0639jcvbb2.cosine.page">
+  <script src="https://cosine.sh/preview/script.js"></script>
+</head>
+
+<body class="resume-bg text-slate-100 font-sans">
+  <div class="max-w-5xl mx-auto p-6 md:p-8">
+    <div class="no-print mb-6">
+      <a href="../index.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M10.828 12l4.95-4.95-1.414-1.414L8.0 12l6.364 6.364 1.414-1.414z" />
+        </svg>
+        Back to portfolio
+      </a>
+    </div>
+    <!-- Header -->
+    <header class="flex items-start justify-between gap-6 pb-6 border-b border-white/10">
+      <div>
+        <span
+          class="print-plain inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-slate-400 bg-slate-900/60 px-3 py-2 rounded-full border border-white/10">Open
+          to roles</span>
+        <h1 class="text-3xl md:text-4xl font-serif font-semibold mt-4">Mark Adrian Basagre</h1>
+        <p class="text-slate-300 font-medium">Web Developer</p>
+        <div class="mt-2 flex flex-wrap gap-3 text-sm text-slate-300">
+          <a href="mailto:aianbasagre@gmail.com" class="hover:text-white transition">aianbasagre@gmail.com</a>
+          <span class="text-slate-500">•</span>
+          <span class="text-slate-400">Antipolo City, Rizal</span>
+        </div>
+      </div>
+      <div class="flex flex-col items-end gap-3">
+        <button onclick="window.print()"
+          class="no-print inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-300 text-slate-900 hover:bg-amber-200 text-sm font-semibold transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-80" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 2a2 2 0 0 0-2 2v3h16V4a2 2 0 0 0-2-2H6Z" />
+            <path d="M6 14a2 2 0 0 0-2 2v4h16v-4a2 2 0 0 0-2-2H6Z" />
+            <path d="M3 9a2 2 0 0 0-2 2v4a1 1 0 1 0 2 0v-4h20v4a1 1 0 1 0 2 0v-4a2 2 0 0 0-2-2H3Z" />
+          </svg>
+          Download as PDF
+        </button>
+        <img src="../assets/images/Resume.png" alt="Resume photo"
+          class="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border border-white/20 shadow" />
+      </div>
+    </header>
+
+    <!-- Two-column layout -->
+    <div class="grid md:grid-cols-3 gap-8 pt-6">
+      <!-- Left Column -->
+      <div class="md:col-span-1 space-y-6">
+        <!-- Objective -->
+        <section class="card-frame rounded-2xl p-5">
+          <h2 class="text-xs uppercase tracking-[0.3em] text-slate-400">Objective</h2>
+          <div class="h-px w-12 section-line mt-3 rounded-full"></div>
+          <p class="mt-3 text-slate-300">
+            A highly disciplined and hard-working individual looking for an organisation which provides me with ample
+            opportunities to enhance my skills and knowledge along with contributing to the growth of the organisation.
+          </p>
+        </section>
+
+        <!-- Personal Information -->
+        <section class="card-frame rounded-2xl p-5">
+          <h2 class="text-xs uppercase tracking-[0.3em] text-slate-400">Personal Information</h2>
+          <div class="h-px w-12 section-line mt-3 rounded-full"></div>
+          <ul class="mt-3 space-y-1 text-slate-300">
+            <li>Age: 27 (Born September 24, 1998)</li>
+            <li>Status: Single</li>
+            <li>Gender: Male</li>
+            <li>Nationality: Filipino</li>
+            <li>Religion: Roman Catholic</li>
+          </ul>
+        </section>
+
+        <!-- Educational Background -->
+        <section class="card-frame rounded-2xl p-5">
+          <h2 class="text-xs uppercase tracking-[0.3em] text-slate-400">Educational Background</h2>
+          <div class="h-px w-12 section-line mt-3 rounded-full"></div>
+          <ul class="mt-3 space-y-1 text-slate-300">
+            <li>BSIT, Our Lady of Fatima University – S.Y. 2019–2023</li>
+            <li>STEM, Our Lady of Fatima University – S.Y. 2017–2019</li>
+            <li>Junior High, East Manila Integrated School – S.Y. 2013–2017</li>
+            <li>Elementary, Peace Village Elementary School – S.Y. 2006–2012</li>
+          </ul>
+        </section>
+
+        <!-- Skills -->
+        <section class="card-frame rounded-2xl p-5">
+          <h2 class="text-xs uppercase tracking-[0.3em] text-slate-400">Skills</h2>
+          <div class="h-px w-12 section-line mt-3 rounded-full"></div>
+          <div class="mt-3 grid grid-cols-2 gap-x-6 gap-y-2 text-slate-300">
+            <span>HTML</span><span>CSS</span><span>PHP</span><span>MySQL</span>
+            <span>JavaScript</span><span>Bootstrap</span><span>Tailwind</span><span>Laravel</span>
+            <span class="col-span-2">Troubleshooting Computers</span>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Column -->
+      <div class="md:col-span-2 space-y-6">
+        <!-- Professional Experience -->
+        <section class="card-frame rounded-2xl p-6">
+          <h2 class="text-xs uppercase tracking-[0.3em] text-slate-400">Professional Experience</h2>
+          <div class="h-px w-12 section-line mt-3 rounded-full"></div>
+
+          <div class="mt-4">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="font-semibold text-white">Programmer — Rusty Lopez</h3>
+                <p class="text-slate-400 text-sm">Duration: 2+ years</p>
+              </div>
+              <span
+                class="inline-flex items-center rounded-full bg-purple-500/15 text-purple-300 px-3 py-1 text-xs border border-purple-400/20">Office
+                Based</span>
+            </div>
+            <ul class="mt-3 list-disc list-inside space-y-1 text-slate-300">
+              <li>Created a web-based system for temporary Acknowledge Report Receipt using HTML, CSS (Bootstrap), PHP,
+                MySQL, and JavaScript.</li>
+              <li>Developed a Shoe Name Picker using HTML, CSS (Tailwind), PHP, MySQL, and JavaScript.</li>
+              <li>Managed the RustyLopez E-commerce website (WordPress).</li>
+              <li>Updated database of PC count for the Audit department using MySQL Server and RPro9.</li>
+              <li>Troubleshot computers for all departments.</li>
+              <li>Reprogrammed/formatted Windows OS.</li>
+              <li>Built an Android barcode scanning app using Android Studio and Java.</li>
+              <li>Developed lclopezresources.com for daily tenant collection using Sunmi V2S POS system.</li>
+            </ul>
+          </div>
+
+          <div class="mt-6">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="font-semibold text-white">UI/UX and Frontend — TabulateCRM</h3>
+                <p class="text-slate-400 text-sm">8 Months • Work-from-home • USA-based position</p>
+              </div>
+              <span
+                class="inline-flex items-center rounded-full bg-sky-500/15 text-sky-300 px-3 py-1 text-xs border border-sky-400/20">Remote</span>
+            </div>
+            <ul class="mt-3 list-disc list-inside space-y-1 text-slate-300">
+              <li>Led UI/UX and frontend implementation for TabulateCRM interfaces.</li>
+              <li>Built responsive components and pages using Tailwind CSS, HTML, and JavaScript.</li>
+              <li>Designed assets and layouts using Canva to support product and marketing needs.</li>
+              <li>Collaborated asynchronously across time zones to deliver features in a remote setup.</li>
+            </ul>
+          </div>
+
+          <div class="mt-6">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="font-semibold text-white">IT Intern — Miescor Builder Inc.</h3>
+                <p class="text-slate-400 text-sm">Duration: Feb–June 2023</p>
+              </div>
+            </div>
+            <ul class="mt-3 list-disc list-inside space-y-1 text-slate-300">
+              <li>Performed computer troubleshooting.</li>
+              <li>Installed Microsoft Office &amp; basic software.</li>
+              <li>Conducted computer inventory per department.</li>
+              <li>Data encoding tasks.</li>
+              <li>Reinstalled operating systems.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Seminars Attended -->
+        <section class="card-frame rounded-2xl p-6">
+          <h2 class="text-xs uppercase tracking-[0.3em] text-slate-400">Seminars Attended</h2>
+          <div class="h-px w-12 section-line mt-3 rounded-full"></div>
+          <ul class="mt-3 list-disc list-inside space-y-1 text-slate-300">
+            <li>Cyber Security and Work Etiquettes – Nov 19, 2022</li>
+            <li>Back-end Development with Laravel – Nov 12, 2022</li>
+            <li>IT Service Management – Dec 17, 2022</li>
+            <li>Artificial Intelligence and Machine Learning – Oct 13, 2022</li>
+            <li>Virtual Reality and Augmented Reality – Oct 6 &amp; 13, 2022</li>
+            <li>Fundamentals of Active Directories &amp; Azure – Nov 21, 2022</li>
+            <li>Innovation – Oct 5, 2020</li>
+            <li>Cyber Security – Oct 6 &amp; 14, 2022</li>
+            <li>Networking 101 – Nov 19, 2022</li>
+            <li>Tech Talks – Oct 7, 2022</li>
+          </ul>
+        </section>
+
+        <!-- References -->
+        <section class="card-frame rounded-2xl p-6">
+          <h2 class="text-xs uppercase tracking-[0.3em] text-slate-400">References</h2>
+          <div class="h-px w-12 section-line mt-3 rounded-full"></div>
+          <div class="mt-3 space-y-3 text-slate-300">
+            <div>
+              <p class="font-semibold text-white">Danica Rivera</p>
+              <p class="text-sm">Treasury Staff – Metro Antipolo Hospital &amp; Medical Center</p>
+              <p class="text-sm">0968 297 8951 | <a href="mailto:danica@gmail.com"
+                  class="text-amber-200 hover:text-amber-100">danica@gmail.com</a></p>
+            </div>
+            <div>
+              <p class="font-semibold text-white">Ann Marie Panes</p>
+              <p class="text-sm">System Support Specialist – Nephilaweb Inc.</p>
+              <p class="text-sm">0951 177 9171 | <a href="mailto:annmarie@gmail.com"
+                  class="text-amber-200 hover:text-amber-100">annmarie@gmail.com</a></p>
+            </div>
+            <div>
+              <p class="font-semibold text-white">Joshua Martin</p>
+              <p class="text-sm">IT Staff – Comworks</p>
+              <p class="text-sm">0991 518 6502 | <a href="mailto:joshuamartin@gmail.com"
+                  class="text-amber-200 hover:text-amber-100">joshuamartin@gmail.com</a></p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

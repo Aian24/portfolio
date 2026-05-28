@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mark Adrian Basagre — Portfolio</title>
+  <meta name="description" content="Portfolio of Mark Adrian Basagre — Web Developer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,500;700&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
+            serif: ['Fraunces', 'serif']
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '0% 50%' },
+              '100%': { backgroundPosition: '200% 50%' }
+            },
+            drift: {
+              '0%, 100%': { transform: 'translateY(0px) translateX(0px)' },
+              '50%': { transform: 'translateY(-14px) translateX(10px)' }
+            },
+            rise: {
+              '0%': { opacity: '0', transform: 'translateY(12px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            slideIn: {
+              '0%': { opacity: '0', transform: 'translateX(100%)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' }
+            },
+            bounce: {
+              '0%, 100%': { transform: 'scale(1)' },
+              '50%': { transform: 'scale(1.1)' }
+            },
+            pulse: {
+              '0%, 100%': { opacity: '1' },
+              '50%': { opacity: '0.7' }
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            }
+          },
+          animation: {
+            fadeIn: 'fadeIn 0.6s ease-out',
+            shimmer: 'shimmer 3s ease-in-out infinite',
+            drift: 'drift 18s ease-in-out infinite',
+            rise: 'rise 0.6s ease-out',
+            float: 'float 3s ease-in-out infinite',
+            slideIn: 'slideIn 0.3s ease-out',
+            bounce: 'bounce 2s ease-in-out infinite',
+            pulse: 'pulse 2s ease-in-out infinite',
+            slideUp: 'slideUp 0.3s ease-out'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes gradient {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    @keyframes gradientText {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    @keyframes revealLine {
+      0% { width: 0; opacity: 0; }
+      100% { width: 80px; opacity: 1; }
+    }
+
+    @keyframes scaleIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes ripple {
+      to { transform: scale(4); opacity: 0; }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    :root { color-scheme: dark; }
+
+    /* Scroll Progress Bar */
+    #scrollProgress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, #fbbf24, #22d3ee, #a78bfa);
+      z-index: 100;
+      transition: width 0.05s linear;
+      box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+    }
+
+    /* Cursor glow (desktop only) */
+    #cursorGlow {
+      position: fixed;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.3s;
+    }
+
+    .gradient-bg {
+      background: linear-gradient(-45deg, #0b0f14, #0f141c, #131a26, #0b0f14);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+
+    .site-bg {
+      background:
+        radial-gradient(900px 600px at 85% -10%, rgba(34, 211, 238, 0.12), transparent 60%),
+        radial-gradient(900px 500px at 10% 0%, rgba(245, 158, 11, 0.12), transparent 55%),
+        #0b0f14;
+    }
+
+    .soft-grid {
+      background-image:
+        linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    .glass-card {
+      background: rgba(15, 20, 28, 0.7);
+      backdrop-filter: blur(12px);
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(148, 163, 184, 0.45);
+      box-shadow: 0 25px 50px -20px rgba(15, 20, 28, 0.9);
+    }
+
+    .shimmer-line {
+      background: linear-gradient(90deg, rgba(251, 191, 36, 0.1), rgba(251, 191, 36, 0.8), rgba(34, 211, 238, 0.8), rgba(251, 191, 36, 0.1));
+      background-size: 200% 100%;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    .card-frame {
+      border: 1px solid transparent;
+      background:
+        linear-gradient(#0f141c, #0f141c) padding-box,
+        linear-gradient(120deg, rgba(251, 191, 36, 0.35), rgba(34, 211, 238, 0.35), rgba(148, 163, 184, 0.2)) border-box;
+    }
+
+    .section-line {
+      background: linear-gradient(90deg, rgba(251, 191, 36, 0.8), rgba(34, 211, 238, 0.6), transparent);
+    }
+
+    /* Gradient animated text */
+    .gradient-text {
+      background: linear-gradient(135deg, #fbbf24, #22d3ee, #a78bfa, #fbbf24);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientText 6s ease infinite;
+    }
+
+    /* Typing cursor */
+    .typing-cursor::after {
+      content: '|';
+      animation: blink 0.8s infinite;
+      color: #fbbf24;
+      font-weight: 300;
+    }
+
+    /* Section reveal animation */
+    .reveal-section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .reveal-section.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger children */
+    .stagger-children > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .stagger-children.revealed > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+    .stagger-children.revealed > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+    .stagger-children.revealed > *:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+    .stagger-children.revealed > *:nth-child(4) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+    .stagger-children.revealed > *:nth-child(5) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+    .stagger-children.revealed > *:nth-child(6) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+
+    /* Tilt card perspective */
+    .tilt-card {
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+
+    /* Stat counter */
+    .stat-number {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Button ripple */
+    .btn-ripple {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-ripple .ripple-effect {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+    }
+
+    /* Enhanced nav link underline */
+    .nav-link-enhanced {
+      position: relative;
+    }
+
+    .nav-link-enhanced::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #fbbf24, #22d3ee);
+      transition: width 0.3s ease;
+      border-radius: 1px;
+    }
+
+    .nav-link-enhanced:hover::after,
+    .nav-link-enhanced.active-nav::after {
+      width: 100%;
+    }
+
+    /* Gallery styles */
+    .project-gallery {
+      overflow: hidden;
+    }
+
+    .gallery-dot.active {
+      background: white !important;
+      transform: scale(1.3);
+    }
+
+    .gallery-dot:not(.active) {
+      background: rgba(255, 255, 255, 0.4) !important;
+    }
+
+    .gallery-dot:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    /* Lightbox animations */
+    #lightbox {
+      transition: opacity 0.3s ease;
+    }
+
+    #lightbox.lightbox-entering {
+      opacity: 0;
+    }
+
+    #lightbox.lightbox-visible {
+      opacity: 1;
+    }
+
+    #lightboxImg {
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    #lightboxImg.switching {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    .lightbox-thumb {
+      width: 56px;
+      height: 40px;
+      border-radius: 6px;
+      object-fit: cover;
+      border: 2px solid transparent;
+      opacity: 0.5;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .lightbox-thumb:hover {
+      opacity: 0.8;
+    }
+
+    .lightbox-thumb.active {
+      border-color: rgba(251, 191, 36, 0.8);
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    .project-card {
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Skill card hover glow */
+    .skill-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .skill-card:hover::before {
+      left: 100%;
+    }
+
+    /* Noise texture overlay */
+    .noise-overlay::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.015;
+      z-index: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+  </style>
+</head>
+
+<body class="site-bg text-slate-100 font-sans antialiased selection:bg-amber-300 selection:text-slate-900 noise-overlay">
+
+  <!-- Scroll Progress Bar -->
+  <div id="scrollProgress"></div>
+
+  <!-- Cursor Glow (desktop) -->
+  <div id="cursorGlow" class="hidden md:block"></div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-[#0b0f14]/80 backdrop-blur-md border-b border-slate-800/60">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="text-lg font-semibold text-white hover:text-amber-200 transition">
+          <span class="gradient-text">M</span>ark Adrian Basagre
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#about" class="nav-link nav-link-enhanced text-sm text-slate-400 hover:text-amber-200 transition-colors"
+            data-section="about">About</a>
+          <a href="#experience" class="nav-link nav-link-enhanced text-sm text-slate-400 hover:text-amber-200 transition-colors"
+            data-section="experience">Experience</a>
+          <a href="#projects" class="nav-link nav-link-enhanced text-sm text-slate-400 hover:text-amber-200 transition-colors"
+            data-section="projects">Projects</a>
+          <a href="#contact"
+            class="nav-link btn-ripple inline-flex items-center gap-1.5 text-sm text-slate-900 bg-amber-300 px-4 py-2 rounded-full font-semibold hover:bg-amber-200 transition-colors"
+            data-section="contact">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            Contact
+          </a>
+          <a href="resume/Basagre-Resume.pdf" download
+            class="text-sm text-slate-400 hover:text-amber-200 transition-colors">Download Resume</a>
+        </nav>
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-200" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-800/60 bg-[#0b0f14]">
+      <div class="px-6 py-4 space-y-3">
+        <a href="#about" class="nav-link block text-sm text-slate-400 hover:text-amber-200 transition"
+          data-section="about">About</a>
+        <a href="#experience" class="nav-link block text-sm text-slate-400 hover:text-amber-200 transition"
+          data-section="experience">Experience</a>
+        <a href="#projects" class="nav-link block text-sm text-slate-400 hover:text-amber-200 transition"
+          data-section="projects">Projects</a>
+        <a href="#contact"
+          class="nav-link inline-flex items-center justify-center gap-1.5 text-sm text-slate-900 bg-amber-300 px-4 py-2 rounded-full font-semibold hover:bg-amber-200 transition"
+          data-section="contact">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          Contact
+        </a>
+        <a href="resume/Basagre-Resume.pdf" download
+          class="block text-sm text-slate-400 hover:text-amber-200 transition">Download Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="py-24 md:py-36 gradient-bg relative overflow-hidden">
+    <div class="absolute inset-0 soft-grid opacity-60"></div>
+    <div
+      class="absolute -top-24 -right-24 w-72 h-72 md:w-96 md:h-96 rounded-full bg-cyan-400/10 blur-3xl animate-drift">
+    </div>
+    <div
+      class="absolute -bottom-24 -left-24 w-72 h-72 md:w-96 md:h-96 rounded-full bg-amber-400/10 blur-3xl animate-drift"
+      style="animation-delay: 2s;"></div>
+    <div class="mx-auto max-w-6xl px-6 relative z-10">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="animate-fadeIn text-center md:text-left">
+          <span
+            class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-emerald-300 bg-emerald-900/20 px-4 py-2 rounded-full border border-emerald-800/40">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Available for work
+          </span>
+          <h1 class="text-5xl md:text-6xl font-serif tracking-tight mt-6 mb-4 text-white">
+            Mark Adrian <span class="gradient-text">Basagre</span>
+          </h1>
+          <div class="h-px w-24 shimmer-line mx-auto md:mx-0 mb-6 rounded-full"></div>
+          <h2 class="text-2xl md:text-3xl font-medium text-slate-300 mb-6">
+            I build <span id="typingText" class="text-amber-300 typing-cursor"></span>
+          </h2>
+          <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-xl mx-auto md:mx-0">
+            Crafting clean, user-centric interfaces and rock-solid backend systems with PHP, Laravel, and
+            MySQL. From dashboards to POS integrations, I ship software that teams actually love to use.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <a href="#projects"
+              class="btn-ripple inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 bg-amber-300 text-slate-900 text-sm font-semibold hover:bg-amber-200 transition-all transform hover:scale-105 shadow-lg shadow-amber-300/20 rounded-lg">
+              <span>Explore My Work</span>
+              <svg class="w-4 h-4 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+            <a href="resume/Basagre-Resume.pdf" download
+              class="btn-ripple inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 border border-slate-700 text-slate-200 text-sm font-semibold hover:bg-slate-800/60 transition-all transform hover:scale-105 rounded-lg">
+              <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              <span>Download Resume</span>
+            </a>
+          </div>
+          <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-xl mx-auto md:mx-0 stagger-children" id="heroStats">
+            <div class="glass-card card-frame rounded-xl p-4 text-left tilt-card">
+              <p class="text-xs text-slate-400">Experience</p>
+              <p class="text-lg font-semibold text-white stat-number"><span class="counter" data-target="3">0</span>+ years</p>
+            </div>
+            <div class="glass-card card-frame rounded-xl p-4 text-left tilt-card">
+              <p class="text-xs text-slate-400">Projects shipped</p>
+              <p class="text-lg font-semibold text-white stat-number"><span class="counter" data-target="6">0</span> featured</p>
+            </div>
+            <div class="glass-card card-frame rounded-xl p-4 text-left tilt-card">
+              <p class="text-xs text-slate-400">Focus</p>
+              <p class="text-lg font-semibold text-white">Web apps</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center md:justify-end animate-fadeIn" style="animation-delay: 0.2s;">
+          <div class="relative">
+            <div
+              class="absolute inset-0 rounded-full bg-gradient-to-tr from-amber-300/30 to-cyan-300/20 blur-2xl animate-float">
+            </div>
+            <img src="assets/images/resume.png" alt="Mark Adrian Basagre"
+              class="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border border-slate-700/80 shadow-2xl transform hover:scale-105 transition-transform duration-300" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 border-t border-slate-800/60">
+    <div class="mx-auto max-w-6xl px-6 reveal-section">
+      <div class="grid md:grid-cols-[1.2fr,1fr] gap-10 items-start">
+        <div>
+          <p class="text-xs uppercase tracking-[0.3em] text-slate-400 text-center md:text-left">About</p>
+          <div class="h-px w-20 section-line mx-auto md:mx-0 my-4 rounded-full"></div>
+          <h2 class="text-3xl font-bold mb-6 text-white text-center md:text-left">Who I am & <span class="gradient-text">what drives me</span></h2>
+          <p class="text-slate-400 leading-relaxed text-lg text-center md:text-left">
+            I'm a developer who cares about the details — from pixel-perfect UIs to database optimization.
+            With hands-on experience spanning front-end, back-end, mobile, and e-commerce,
+            I turn complex requirements into software people actually enjoy using.
+          </p>
+        </div>
+        <div class="glass-card card-frame rounded-2xl p-6 tilt-card">
+          <h3 class="text-sm uppercase tracking-[0.3em] text-slate-400 mb-4 text-center md:text-left">Capabilities</h3>
+          <ul class="text-slate-300 text-sm space-y-3">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-300 flex-shrink-0"></span>UI implementation with Tailwind CSS and custom components</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-300 flex-shrink-0"></span>Workflow automation using PHP, MySQL, and JavaScript</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-300 flex-shrink-0"></span>Responsive dashboards, admin tools, and reporting systems</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-300 flex-shrink-0"></span>Cross-team collaboration in onsite and remote environments</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="py-20 border-t border-slate-800/60 bg-[#0f141c]">
+    <div class="mx-auto max-w-6xl px-6 reveal-section">
+      <p class="text-xs uppercase tracking-[0.3em] text-slate-400 text-center md:text-left">Experience</p>
+      <div class="h-px w-20 section-line mx-auto md:mx-0 my-4 rounded-full"></div>
+      <h2 class="text-3xl font-bold mb-12 text-white text-center md:text-left">Where I've <span class="gradient-text">made impact</span></h2>
+
+      <div class="grid lg:grid-cols-2 gap-6">
+        <div class="glass-card card-frame p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Role</p>
+              <h3 class="text-2xl font-semibold text-white mt-2">Programmer</h3>
+              <p class="text-sm text-slate-400 mt-2">RustyLopez • 3+ years</p>
+            </div>
+            <span class="text-xs text-emerald-300 bg-emerald-900/30 px-3 py-1 rounded-full font-medium">Current</span>
+          </div>
+          <div class="mt-6 grid gap-3">
+            <div class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-amber-300"></span>
+              <p class="text-sm text-slate-300">Built web-based tools for receipts, naming, and daily reporting.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-cyan-300"></span>
+              <p class="text-sm text-slate-300">Managed e-commerce operations and WordPress platform upkeep.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-emerald-300"></span>
+              <p class="text-sm text-slate-300">Integrated POS workflows and built Android barcode scanning tools.</p>
+            </div>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">HTML</span>
+            <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">PHP</span>
+            <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">MySQL</span>
+            <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">JavaScript</span>
+            <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">Android Studio</span>
+          </div>
+        </div>
+
+        <div class="glass-card card-frame p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Role</p>
+              <h3 class="text-2xl font-semibold text-white mt-2">UI/UX and Frontend</h3>
+              <p class="text-sm text-slate-400 mt-2">TabulateCRM • Remote • USA-based</p>
+            </div>
+            <span class="text-xs text-cyan-300 bg-cyan-900/30 px-3 py-1 rounded-full font-medium">Remote</span>
+          </div>
+          <div class="mt-6 grid gap-3">
+            <div class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-cyan-300"></span>
+              <p class="text-sm text-slate-300">Shipped CRM interface improvements with crisp UI and UX flows.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-amber-300"></span>
+              <p class="text-sm text-slate-300">Built responsive components using Tailwind CSS and JavaScript.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-emerald-300"></span>
+              <p class="text-sm text-slate-300">Collaborated asynchronously and delivered assets for the team.</p>
+            </div>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">Tailwind CSS</span>
+            <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">HTML</span>
+            <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">JavaScript</span>
+            <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">Canva</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-20 border-t border-slate-800/60">
+    <div class="mx-auto max-w-6xl px-6 reveal-section">
+      <p class="text-xs uppercase tracking-[0.3em] text-slate-400 text-center md:text-left">Skills</p>
+      <div class="h-px w-20 section-line mx-auto md:mx-0 my-4 rounded-full"></div>
+      <h2 class="text-3xl font-bold mb-8 text-white text-center md:text-left">My <span class="gradient-text">toolkit</span></h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children" id="skillsGrid">
+        <div class="glass-card card-frame rounded-2xl p-5 skill-card tilt-card">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-cyan-300/20 border border-cyan-300/30 flex items-center justify-center text-cyan-200 text-sm font-semibold">
+              FE</div>
+            <h3 class="text-sm uppercase tracking-[0.3em] text-slate-400">Frontend</h3>
+          </div>
+          <p class="text-lg text-white font-semibold mt-3">HTML • CSS • JavaScript</p>
+          <p class="text-sm text-slate-400 mt-2">Tailwind CSS, Bootstrap</p>
+        </div>
+        <div class="glass-card card-frame rounded-2xl p-5 skill-card tilt-card">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-amber-300/20 border border-amber-300/30 flex items-center justify-center text-amber-200 text-sm font-semibold">
+              BE</div>
+            <h3 class="text-sm uppercase tracking-[0.3em] text-slate-400">Backend</h3>
+          </div>
+          <p class="text-lg text-white font-semibold mt-3">PHP • MySQL • Laravel</p>
+          <p class="text-sm text-slate-400 mt-2">API integrations and reporting workflows</p>
+        </div>
+        <div class="glass-card card-frame rounded-2xl p-5 skill-card tilt-card">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-emerald-300/20 border border-emerald-300/30 flex items-center justify-center text-emerald-200 text-sm font-semibold">
+              PL</div>
+            <h3 class="text-sm uppercase tracking-[0.3em] text-slate-400">Platforms</h3>
+          </div>
+          <p class="text-lg text-white font-semibold mt-3">WordPress • Android Studio • VS Code</p>
+          <p class="text-sm text-slate-400 mt-2">Java, inventory tools, mobile utilities</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-20 border-t border-slate-800/60 bg-[#0f141c]">
+    <div class="mx-auto max-w-6xl px-6 reveal-section">
+      <p class="text-xs uppercase tracking-[0.3em] text-slate-400 text-center md:text-left">Projects</p>
+      <div class="h-px w-20 section-line mx-auto md:mx-0 my-4 rounded-full"></div>
+      <h2 class="text-3xl font-bold mb-4 text-white text-center md:text-left">Things I've <span class="gradient-text">built</span></h2>
+      <p class="text-slate-400 mb-12 text-center md:text-left">Real-world tools and systems I designed, developed, and shipped. Hover for galleries, click to explore.</p>
+
+      <div class="grid md:grid-cols-2 gap-8 stagger-children" id="projectsGrid">
+
+        <!-- Project 1: LC Lopez Resources (Gallery - 2 images) -->
+        <article class="project-card glass-card card-frame rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group"
+          data-link="https://lclopezresources.com/index.php">
+          <div class="project-gallery relative" data-gallery-id="lclopez">
+            <div class="gallery-track flex transition-transform duration-500 ease-out" style="width:200%">
+              <div class="gallery-slide w-1/2 flex-shrink-0 relative cursor-pointer" data-lightbox-src="assets/images/lclopez.jpg">
+                <div class="absolute inset-0 bg-gradient-to-tr from-amber-400/20 to-cyan-400/10 opacity-0 group-hover:opacity-100 transition z-10"></div>
+                <img src="assets/images/lclopez.jpg" alt="LC Lopez Resources — Collection Dashboard" class="w-full h-56 object-cover" loading="lazy">
+              </div>
+              <div class="gallery-slide w-1/2 flex-shrink-0 relative cursor-pointer" data-lightbox-src="assets/images/lclopez2.jpg.png">
+                <div class="absolute inset-0 bg-gradient-to-tr from-amber-400/20 to-cyan-400/10 opacity-0 group-hover:opacity-100 transition z-10"></div>
+                <img src="assets/images/lclopez2.jpg.png" alt="LC Lopez Resources — Dashboard Overview" class="w-full h-56 object-cover" loading="lazy">
+              </div>
+            </div>
+            <!-- Gallery controls -->
+            <button class="gallery-prev absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-black/50 backdrop-blur-sm text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20 hover:bg-black/70" aria-label="Previous image">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button class="gallery-next absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-black/50 backdrop-blur-sm text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20 hover:bg-black/70" aria-label="Next image">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <!-- Dots -->
+            <div class="gallery-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
+              <button class="w-2 h-2 rounded-full bg-white transition-all duration-300 gallery-dot active" data-index="0" aria-label="Image 1"></button>
+              <button class="w-2 h-2 rounded-full bg-white/40 transition-all duration-300 gallery-dot" data-index="1" aria-label="Image 2"></button>
+            </div>
+            <!-- Image counter badge -->
+            <div class="absolute top-3 right-3 z-20 flex items-center gap-1.5 bg-black/50 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              <span class="gallery-counter">1 / 2</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start">
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Workflow platform</p>
+              <a href="https://lclopezresources.com/index.php" target="_blank" class="project-ext-link inline-flex items-center gap-1 text-xs text-slate-500 hover:text-amber-300 transition-colors">
+                <span>Visit</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+            <h3 class="text-2xl font-semibold text-white mt-2">LC Lopez Resources</h3>
+            <p class="text-sm text-slate-400 mt-3">Daily collection management with Sunmi V2S POS integration and tenant tracking.</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">HTML</span>
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">PHP</span>
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">MySQL</span>
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">JavaScript</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Rusty Lopez Concession System (Gallery - 2 images) -->
+        <article class="project-card glass-card card-frame rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer"
+          data-link="https://rustylopez.com/Concession/">
+          <div class="project-gallery relative" data-gallery-id="concession">
+            <div class="gallery-track flex transition-transform duration-500 ease-out" style="width:200%">
+              <div class="gallery-slide w-1/2 flex-shrink-0 relative cursor-pointer" data-lightbox-src="assets/images/concession.png">
+                <div class="absolute inset-0 bg-gradient-to-tr from-purple-400/20 to-pink-400/10 opacity-0 group-hover:opacity-100 transition z-10"></div>
+                <img src="assets/images/concession.png" alt="Concession System — Login" class="w-full h-56 object-cover" loading="lazy">
+              </div>
+              <div class="gallery-slide w-1/2 flex-shrink-0 relative cursor-pointer" data-lightbox-src="assets/images/concession2.jpeg">
+                <div class="absolute inset-0 bg-gradient-to-tr from-purple-400/20 to-pink-400/10 opacity-0 group-hover:opacity-100 transition z-10"></div>
+                <img src="assets/images/concession2.jpeg" alt="Concession System — Dashboard" class="w-full h-56 object-cover" loading="lazy">
+              </div>
+            </div>
+            <button class="gallery-prev absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-black/50 backdrop-blur-sm text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20 hover:bg-black/70" aria-label="Previous image">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button class="gallery-next absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-black/50 backdrop-blur-sm text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20 hover:bg-black/70" aria-label="Next image">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <div class="gallery-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
+              <button class="w-2 h-2 rounded-full bg-white transition-all duration-300 gallery-dot active" data-index="0" aria-label="Image 1"></button>
+              <button class="w-2 h-2 rounded-full bg-white/40 transition-all duration-300 gallery-dot" data-index="1" aria-label="Image 2"></button>
+            </div>
+            <div class="absolute top-3 right-3 z-20 flex items-center gap-1.5 bg-black/50 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              <span class="gallery-counter">1 / 2</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start">
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">POS &amp; Inventory</p>
+              <a href="https://rustylopez.com/Concession/" target="_blank" class="project-ext-link inline-flex items-center gap-1 text-xs text-slate-500 hover:text-purple-300 transition-colors">
+                <span>Visit</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+            <h3 class="text-2xl font-semibold text-white mt-2">Rusty Lopez Concession</h3>
+            <p class="text-sm text-slate-400 mt-3">Concession store management system with user authentication, sales tracking, and dashboard analytics.</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">PHP</span>
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">MySQL</span>
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">JavaScript</span>
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">Tailwind CSS</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: TabulateCRM (1 image) -->
+        <article class="project-card glass-card card-frame rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group"
+          data-link="https://premiumdesignscape.com/">
+          <div class="project-gallery relative" data-gallery-id="tabulate">
+            <div class="gallery-track flex transition-transform duration-500 ease-out" style="width:100%">
+              <div class="gallery-slide w-full flex-shrink-0 relative cursor-pointer" data-lightbox-src="assets/images/tabulate.png">
+                <div class="absolute inset-0 bg-gradient-to-tr from-cyan-400/20 to-emerald-400/10 opacity-0 group-hover:opacity-100 transition z-10"></div>
+                <img src="assets/images/tabulate.png" alt="TabulateCRM" class="w-full h-56 object-cover" loading="lazy">
+              </div>
+            </div>
+            <!-- Zoom hint for single images -->
+            <div class="absolute top-3 right-3 z-20 flex items-center gap-1.5 bg-black/50 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+              <span>View</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start">
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">CRM interface</p>
+              <a href="https://premiumdesignscape.com/" target="_blank" class="project-ext-link inline-flex items-center gap-1 text-xs text-slate-500 hover:text-cyan-300 transition-colors">
+                <span>Visit</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+            <h3 class="text-2xl font-semibold text-white mt-2">TabulateCRM</h3>
+            <p class="text-sm text-slate-400 mt-3">Responsive UI/UX build for a USA-based CRM with Tailwind CSS components.</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">Tailwind CSS</span>
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">HTML</span>
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">JavaScript</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Acknowledge Report System (1 image) -->
+        <article class="project-card glass-card card-frame rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+          <div class="project-gallery relative" data-gallery-id="imall">
+            <div class="gallery-track flex transition-transform duration-500 ease-out" style="width:100%">
+              <div class="gallery-slide w-full flex-shrink-0 relative cursor-pointer" data-lightbox-src="assets/images/imall.jpg">
+                <div class="absolute inset-0 bg-gradient-to-tr from-emerald-400/20 to-amber-400/10 opacity-0 group-hover:opacity-100 transition z-10"></div>
+                <img src="assets/images/imall.jpg" alt="Acknowledge Report System" class="w-full h-56 object-cover" loading="lazy">
+              </div>
+            </div>
+            <div class="absolute top-3 right-3 z-20 flex items-center gap-1.5 bg-black/50 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+              <span>View</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Reporting tool</p>
+            <h3 class="text-2xl font-semibold text-white mt-2">Acknowledge Report System</h3>
+            <p class="text-sm text-slate-400 mt-3">Web system for generating temporary acknowledge report receipts.</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">HTML</span>
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">Bootstrap</span>
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">PHP</span>
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">MySQL</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Shoe Name Generator (1 image) -->
+        <article class="project-card glass-card card-frame rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+          <div class="project-gallery relative" data-gallery-id="shoename">
+            <div class="gallery-track flex transition-transform duration-500 ease-out" style="width:100%">
+              <div class="gallery-slide w-full flex-shrink-0 relative cursor-pointer" data-lightbox-src="assets/images/shoename.jpg">
+                <div class="absolute inset-0 bg-gradient-to-tr from-blue-400/20 to-purple-400/10 opacity-0 group-hover:opacity-100 transition z-10"></div>
+                <img src="assets/images/shoename.jpg" alt="Shoe Name Generator" class="w-full h-56 object-cover" loading="lazy">
+              </div>
+            </div>
+            <div class="absolute top-3 right-3 z-20 flex items-center gap-1.5 bg-black/50 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+              <span>View</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Internal tool</p>
+            <h3 class="text-2xl font-semibold text-white mt-2">Shoe Name Generator</h3>
+            <p class="text-sm text-slate-400 mt-3">Internal naming tool for generating and managing shoe product names with style codes.</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">HTML</span>
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">PHP</span>
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">MySQL</span>
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">JavaScript</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6: Barcode Scanner App (1 image) -->
+        <article class="project-card glass-card card-frame rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+          <div class="project-gallery relative" data-gallery-id="barcode">
+            <div class="gallery-track flex transition-transform duration-500 ease-out" style="width:100%">
+              <div class="gallery-slide w-full flex-shrink-0 relative cursor-pointer" data-lightbox-src="assets/images/app.jpg">
+                <div class="absolute inset-0 bg-gradient-to-tr from-slate-400/20 to-cyan-400/10 opacity-0 group-hover:opacity-100 transition z-10"></div>
+                <img src="assets/images/app.jpg" alt="Barcode Scanner App" class="w-full h-56 object-cover" loading="lazy">
+              </div>
+            </div>
+            <div class="absolute top-3 right-3 z-20 flex items-center gap-1.5 bg-black/50 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+              <span>View</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Mobile utility</p>
+            <h3 class="text-2xl font-semibold text-white mt-2">Barcode Scanner App</h3>
+            <p class="text-sm text-slate-400 mt-3">Android app for faster inventory scanning and record updates.</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">Android Studio</span>
+              <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">Java</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Overlay -->
+  <div id="lightbox" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <!-- Backdrop -->
+    <div id="lightboxBackdrop" class="absolute inset-0 bg-black/90 backdrop-blur-md"></div>
+    <!-- Close button -->
+    <button id="lightboxClose" class="absolute top-4 right-4 z-[102] w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-full flex items-center justify-center transition-all" aria-label="Close lightbox">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <!-- Image counter -->
+    <div id="lightboxCounter" class="absolute top-5 left-1/2 -translate-x-1/2 z-[102] text-white/70 text-sm font-medium tracking-wider"></div>
+    <!-- Previous -->
+    <button id="lightboxPrev" class="absolute left-4 top-1/2 -translate-y-1/2 z-[102] w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-full flex items-center justify-center transition-all" aria-label="Previous image">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <!-- Next -->
+    <button id="lightboxNext" class="absolute right-4 top-1/2 -translate-y-1/2 z-[102] w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-full flex items-center justify-center transition-all" aria-label="Next image">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <!-- Image container -->
+    <div class="absolute inset-0 flex items-center justify-center p-8 md:p-16 z-[101]">
+      <img id="lightboxImg" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl transition-all duration-300">
+    </div>
+    <!-- Thumbnail strip -->
+    <div id="lightboxThumbs" class="absolute bottom-4 left-1/2 -translate-x-1/2 z-[102] flex gap-2 p-2 bg-black/40 backdrop-blur-sm rounded-xl max-w-[90vw] overflow-x-auto"></div>
+  </div>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 border-t border-slate-800/60">
+    <div class="mx-auto max-w-6xl px-6 reveal-section">
+      <div class="glass-card card-frame rounded-2xl p-8 md:p-10 tilt-card">
+        <p class="text-xs uppercase tracking-[0.3em] text-slate-400 text-center md:text-left">Contact</p>
+        <div class="h-px w-20 section-line mx-auto md:mx-0 my-4 rounded-full"></div>
+        <h2 class="text-3xl font-bold mb-4 text-white text-center md:text-left">Let's <span class="gradient-text">work together</span></h2>
+        <p class="text-slate-400 mb-8 text-lg text-center md:text-left">
+          Got a project in mind? I respond fast and love diving into new challenges. Let's make something great.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a href="mailto:aianbasagre@gmail.com"
+            class="btn-ripple inline-flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-4 bg-amber-300 text-slate-900 text-sm font-semibold hover:bg-amber-200 transition-all transform hover:scale-105 shadow-lg shadow-amber-300/20 rounded-lg">
+            <svg class="w-4 h-4 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span>Email Me</span>
+          </a>
+          <a href="resume/Basagre-Resume.pdf" download
+            class="btn-ripple inline-flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-4 border border-slate-700 text-slate-200 text-sm font-semibold hover:bg-slate-800/60 transition-all transform hover:scale-105 rounded-lg">
+            <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            <span>Download Resume</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-slate-800/60 bg-[#0f141c]">
+    <div class="mx-auto max-w-6xl px-6">
+      <p class="text-sm text-slate-500 text-center">© <span id="year"></span> Mark Adrian Basagre</p>
+    </div>
+  </footer>
+
+  <!-- Chat Bubble - completely separate, fixed position -->
+  <div id="chatBubble"
+    class="fixed bottom-24 right-6 z-40 bg-[#0f141c] text-white px-4 py-3 pr-8 rounded-lg shadow-xl max-w-xs hidden opacity-0 transition-all duration-300 animate-slideUp border border-slate-800/60"
+    style="pointer-events: none;">
+    <p id="chatBubbleText" class="text-sm font-medium"></p>
+    <button id="chatBubbleClose" class="absolute top-2 right-2 text-white/70 hover:text-white transition p-0.5"
+      style="pointer-events: auto;">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <!-- Bubble tail pointing down to chat button -->
+    <div class="absolute -bottom-2 right-8">
+      <div
+        class="w-0 h-0 border-l-[6px] border-r-[6px] border-t-[8px] border-l-transparent border-r-transparent border-t-slate-900">
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Button - completely separate, fixed position -->
+  <button id="chatToggle"
+    class="fixed bottom-6 right-6 w-14 h-14 bg-[#0f141c] text-white rounded-full shadow-lg hover:bg-slate-800 transition-all flex items-center justify-center z-40 animate-bounce border border-slate-800/60"
+    style="transform: translate(0, 0) !important;">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+    </svg>
+    <!-- Notification dot -->
+    <span id="chatNotification"
+      class="absolute top-0 right-0 w-3 h-3 bg-emerald-400 rounded-full border-2 border-slate-950 hidden animate-pulse"></span>
+  </button>
+
+  <!-- AI Chat Widget -->
+  <div id="chatWidget"
+    class="fixed bottom-24 right-6 left-6 md:left-auto md:w-96 h-[600px] bg-[#0f141c] border border-slate-800/60 rounded-lg shadow-2xl hidden z-50 flex flex-col">
+    <div class="flex items-center justify-between p-4 border-b border-slate-800/60 bg-slate-900/60">
+      <div>
+        <h3 class="font-semibold text-white">Ask me anything</h3>
+        <p class="text-xs text-slate-400">About my work and experience</p>
+      </div>
+      <button id="chatClose" class="p-1 hover:bg-slate-700 rounded transition">
+        <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-4">
+      <div class="flex items-start gap-3">
+        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center flex-shrink-0">
+          <svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+          </svg>
+        </div>
+        <div class="flex-1">
+          <p class="text-sm text-slate-400">Hi! I'm an AI assistant. Ask me anything about Mark's experience, skills,
+            projects, or background.</p>
+        </div>
+      </div>
+    </div>
+    <div class="p-4 border-t border-slate-800/60 bg-slate-900/60">
+      <form id="chatForm" class="flex gap-2">
+        <input type="text" id="chatInput" placeholder="Ask a question..."
+          class="flex-1 px-4 py-2 border border-slate-700 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-amber-300/60 focus:border-transparent bg-slate-800 text-white placeholder-slate-400"
+          autocomplete="off">
+        <button type="submit" id="chatSend"
+          class="px-4 py-2 bg-slate-800 text-white rounded-lg text-sm font-medium hover:bg-slate-700 transition disabled:opacity-50 disabled:cursor-not-allowed">
+          Send
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/particles.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gallery.js"></script>
+  <script src="assets/js/interactive.js"></script>
+  <script src="assets/js/chat.js"></script>
+</body>
+
+</html>
