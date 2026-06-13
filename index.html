@@ -395,7 +395,7 @@
     <div class="mx-auto max-w-6xl px-6">
       <div class="flex items-center justify-between h-16">
         <a href="#" class="text-lg font-semibold text-white hover:text-amber-200 transition">
-          <span class="gradient-text">M</span>ark Adrian Basagre
+          Mark Adrian Basagre
         </a>
         <nav class="hidden md:flex items-center gap-8">
           <a href="#about" class="nav-link nav-link-enhanced text-sm text-slate-400 hover:text-amber-200 transition-colors"
@@ -447,75 +447,206 @@
   </header>
 
   <!-- Hero -->
-  <section class="py-24 md:py-36 gradient-bg relative overflow-hidden">
-    <div class="absolute inset-0 soft-grid opacity-60"></div>
-    <div
-      class="absolute -top-24 -right-24 w-72 h-72 md:w-96 md:h-96 rounded-full bg-cyan-400/10 blur-3xl animate-drift">
-    </div>
-    <div
-      class="absolute -bottom-24 -left-24 w-72 h-72 md:w-96 md:h-96 rounded-full bg-amber-400/10 blur-3xl animate-drift"
-      style="animation-delay: 2s;"></div>
-    <div class="mx-auto max-w-6xl px-6 relative z-10">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="animate-fadeIn text-center md:text-left">
-          <span
-            class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-emerald-300 bg-emerald-900/20 px-4 py-2 rounded-full border border-emerald-800/40">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Available for work
-          </span>
-          <h1 class="text-5xl md:text-6xl font-serif tracking-tight mt-6 mb-4 text-white">
-            Mark Adrian <span class="gradient-text">Basagre</span>
+  <section class="min-h-screen flex items-center gradient-bg relative overflow-hidden">
+    <!-- Background elements -->
+    <div class="absolute inset-0 soft-grid opacity-40"></div>
+    <div class="absolute top-1/4 -right-32 w-[500px] h-[500px] rounded-full bg-cyan-400/8 blur-[100px] animate-drift"></div>
+    <div class="absolute bottom-1/4 -left-32 w-[500px] h-[500px] rounded-full bg-amber-400/8 blur-[100px] animate-drift" style="animation-delay: 3s;"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-purple-500/5 blur-[120px]"></div>
+
+    <!-- Floating accent shapes -->
+    <div class="absolute top-20 left-[15%] w-3 h-3 rounded-full bg-amber-300/30 animate-float" style="animation-delay: 0s;"></div>
+    <div class="absolute top-40 right-[20%] w-2 h-2 rounded-full bg-cyan-300/40 animate-float" style="animation-delay: 1s;"></div>
+    <div class="absolute bottom-32 left-[25%] w-2.5 h-2.5 rounded-full bg-purple-300/30 animate-float" style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-48 right-[15%] w-2 h-2 rounded-full bg-emerald-300/30 animate-float" style="animation-delay: 0.5s;"></div>
+
+    <div class="mx-auto max-w-6xl px-6 relative z-10 py-20 md:py-0 w-full">
+      <div class="grid md:grid-cols-[1fr,auto] gap-16 lg:gap-20 items-center">
+
+        <!-- Left: Text Content -->
+        <div class="animate-fadeIn text-center md:text-left order-2 md:order-1">
+          <!-- Status badge -->
+          <div class="inline-flex items-center gap-2.5 text-xs uppercase tracking-[0.3em] text-emerald-300 bg-emerald-950/40 px-5 py-2.5 rounded-full border border-emerald-800/30 backdrop-blur-sm mb-8">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+            </span>
+            Open to opportunities
+          </div>
+
+          <!-- Name -->
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif tracking-tight mb-2 text-white leading-[1.1]">
+            Mark Adrian
           </h1>
-          <div class="h-px w-24 shimmer-line mx-auto md:mx-0 mb-6 rounded-full"></div>
-          <h2 class="text-2xl md:text-3xl font-medium text-slate-300 mb-6">
-            I build <span id="typingText" class="text-amber-300 typing-cursor"></span>
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif tracking-tight mb-6 leading-[1.1]">
+            <span class="gradient-text">Basagre</span>
+          </h1>
+
+          <!-- Role line -->
+          <div class="flex items-center gap-3 justify-center md:justify-start mb-6">
+            <div class="h-px w-8 bg-gradient-to-r from-amber-300 to-transparent"></div>
+            <p class="text-lg md:text-xl text-slate-300 font-medium">Full Stack Developer</p>
+            <div class="h-px w-8 bg-gradient-to-l from-cyan-300 to-transparent"></div>
+          </div>
+
+          <!-- Typing text -->
+          <h2 class="text-xl md:text-2xl font-light text-slate-400 mb-8">
+            I build <span id="typingText" class="text-amber-300 font-medium typing-cursor"></span>
           </h2>
-          <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-xl mx-auto md:mx-0">
+
+          <!-- Description -->
+          <p class="text-base text-slate-400/90 mb-10 leading-relaxed max-w-lg mx-auto md:mx-0">
             Crafting clean, user-centric interfaces and rock-solid backend systems with PHP, Laravel, and
             MySQL. From dashboards to POS integrations, I ship software that teams actually love to use.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-12">
             <a href="#projects"
-              class="btn-ripple inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 bg-amber-300 text-slate-900 text-sm font-semibold hover:bg-amber-200 transition-all transform hover:scale-105 shadow-lg shadow-amber-300/20 rounded-lg">
+              class="btn-ripple group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 px-7 py-3.5 bg-gradient-to-r from-amber-300 to-amber-400 text-slate-900 text-sm font-semibold hover:from-amber-200 hover:to-amber-300 transition-all transform hover:scale-105 shadow-lg shadow-amber-300/25 rounded-xl">
               <span>Explore My Work</span>
-              <svg class="w-4 h-4 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </a>
             <a href="resume/Basagre-Resume.pdf" download
-              class="btn-ripple inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 border border-slate-700 text-slate-200 text-sm font-semibold hover:bg-slate-800/60 transition-all transform hover:scale-105 rounded-lg">
-              <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              class="btn-ripple group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 px-7 py-3.5 border border-slate-700/80 text-slate-200 text-sm font-semibold hover:bg-white/5 hover:border-slate-600 transition-all transform hover:scale-105 rounded-xl backdrop-blur-sm">
+              <svg class="w-4 h-4 text-slate-400 group-hover:text-amber-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
               <span>Download Resume</span>
             </a>
           </div>
-          <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-xl mx-auto md:mx-0 stagger-children" id="heroStats">
-            <div class="glass-card card-frame rounded-xl p-4 text-left tilt-card">
-              <p class="text-xs text-slate-400">Experience</p>
-              <p class="text-lg font-semibold text-white stat-number"><span class="counter" data-target="3">0</span>+ years</p>
+
+          <!-- Stats row -->
+          <div class="grid grid-cols-3 gap-3 max-w-md mx-auto md:mx-0 stagger-children" id="heroStats">
+            <div class="glass-card rounded-xl p-4 text-center border border-slate-700/40 hover:border-amber-300/30 transition-colors tilt-card">
+              <p class="text-2xl font-bold text-white stat-number"><span class="counter" data-target="3">0</span>+</p>
+              <p class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Years Exp.</p>
             </div>
-            <div class="glass-card card-frame rounded-xl p-4 text-left tilt-card">
-              <p class="text-xs text-slate-400">Projects shipped</p>
-              <p class="text-lg font-semibold text-white stat-number"><span class="counter" data-target="6">0</span> featured</p>
+            <div class="glass-card rounded-xl p-4 text-center border border-slate-700/40 hover:border-cyan-300/30 transition-colors tilt-card">
+              <p class="text-2xl font-bold text-white stat-number"><span class="counter" data-target="6">0</span>+</p>
+              <p class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Projects</p>
             </div>
-            <div class="glass-card card-frame rounded-xl p-4 text-left tilt-card">
-              <p class="text-xs text-slate-400">Focus</p>
-              <p class="text-lg font-semibold text-white">Web apps</p>
+            <div class="glass-card rounded-xl p-4 text-center border border-slate-700/40 hover:border-emerald-300/30 transition-colors tilt-card">
+              <p class="text-2xl font-bold text-white">
+                <svg class="w-6 h-6 mx-auto text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </p>
+              <p class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Web Apps</p>
             </div>
           </div>
         </div>
-        <div class="flex justify-center md:justify-end animate-fadeIn" style="animation-delay: 0.2s;">
+
+        <!-- Right: Profile Visual -->
+        <div class="flex justify-center md:justify-end animate-fadeIn order-1 md:order-2" style="animation-delay: 0.3s;">
           <div class="relative">
-            <div
-              class="absolute inset-0 rounded-full bg-gradient-to-tr from-amber-300/30 to-cyan-300/20 blur-2xl animate-float">
+            <!-- Outer orbital ring -->
+            <div class="absolute -inset-8 rounded-full border border-dashed border-slate-700/40 animate-[spin_25s_linear_infinite]"></div>
+
+            <!-- Inner orbital ring -->
+            <div class="absolute -inset-4 rounded-full border border-slate-700/20 animate-[spin_20s_linear_infinite_reverse]"></div>
+
+            <!-- Orbital dots -->
+            <div class="absolute -inset-8 animate-[spin_25s_linear_infinite]">
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-amber-300 shadow-lg shadow-amber-300/50"></div>
             </div>
-            <img src="assets/images/resume.png" alt="Mark Adrian Basagre"
-              class="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border border-slate-700/80 shadow-2xl transform hover:scale-105 transition-transform duration-300" />
+            <div class="absolute -inset-4 animate-[spin_20s_linear_infinite_reverse]">
+              <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-2.5 h-2.5 rounded-full bg-cyan-300 shadow-lg shadow-cyan-300/50"></div>
+            </div>
+
+            <!-- Glow behind image -->
+            <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-amber-300/20 via-purple-400/10 to-cyan-300/20 blur-3xl scale-110 animate-pulse"></div>
+
+            <!-- Profile image -->
+            <div class="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full p-1 bg-gradient-to-tr from-amber-300/60 via-cyan-300/40 to-purple-400/60">
+              <img src="assets/images/profile.png" alt="Mark Adrian Basagre"
+                class="w-full h-full rounded-full object-cover shadow-2xl shadow-slate-900/80" />
+            </div>
+
+            <!-- Floating tech badges around profile (clock positions) -->
+            <!-- 12 o'clock -->
+            <div class="absolute glass-card rounded-lg px-3 py-1.5 border border-slate-700/50 text-xs text-amber-300 font-medium animate-float shadow-lg z-30" style="top: -28px; left: 50%; transform: translateX(-50%); animation-delay: 0s;">
+              <span class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-300"></span>
+                Laravel
+              </span>
+            </div>
+            <!-- 1:30 -->
+            <div class="absolute glass-card rounded-lg px-3 py-1.5 border border-slate-700/50 text-xs text-cyan-300 font-medium animate-float shadow-lg z-30" style="top: 12%; right: -64px; animation-delay: 0.4s;">
+              <span class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span>
+                PHP
+              </span>
+            </div>
+            <!-- 3 o'clock -->
+            <div class="absolute glass-card rounded-lg px-3 py-1.5 border border-slate-700/50 text-xs text-emerald-300 font-medium animate-float shadow-lg z-30" style="top: 38%; right: -72px; animation-delay: 0.8s;">
+              <span class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-300"></span>
+                MySQL
+              </span>
+            </div>
+            <!-- 4:30 -->
+            <div class="absolute glass-card rounded-lg px-3 py-1.5 border border-slate-700/50 text-xs text-blue-300 font-medium animate-float shadow-lg z-30" style="bottom: 22%; right: -56px; animation-delay: 1.2s;">
+              <span class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-300"></span>
+                CSS
+              </span>
+            </div>
+            <!-- 6 o'clock right -->
+            <div class="absolute glass-card rounded-lg px-3 py-1.5 border border-slate-700/50 text-xs text-sky-300 font-medium animate-float shadow-lg z-30" style="bottom: -28px; right: 15%; animation-delay: 1.6s;">
+              <span class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-sky-300"></span>
+                Tailwind
+              </span>
+            </div>
+            <!-- 6 o'clock left -->
+            <div class="absolute glass-card rounded-lg px-3 py-1.5 border border-slate-700/50 text-xs text-indigo-300 font-medium animate-float shadow-lg z-30" style="bottom: -28px; left: 10%; animation-delay: 2s;">
+              <span class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-indigo-300"></span>
+                Bluehost
+              </span>
+            </div>
+            <!-- 7:30 -->
+            <div class="absolute glass-card rounded-lg px-3 py-1.5 border border-slate-700/50 text-xs text-rose-300 font-medium animate-float shadow-lg z-30" style="bottom: 22%; left: -48px; animation-delay: 2.4s;">
+              <span class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-rose-300"></span>
+                Git
+              </span>
+            </div>
+            <!-- 9 o'clock -->
+            <div class="absolute glass-card rounded-lg px-3 py-1.5 border border-slate-700/50 text-xs text-orange-300 font-medium animate-float shadow-lg z-30" style="top: 38%; left: -64px; animation-delay: 2.8s;">
+              <span class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-orange-300"></span>
+                HTML
+              </span>
+            </div>
+            <!-- 10:30 -->
+            <div class="absolute glass-card rounded-lg px-3 py-1.5 border border-slate-700/50 text-xs text-yellow-300 font-medium animate-float shadow-lg z-30" style="top: 12%; left: -80px; animation-delay: 3.2s;">
+              <span class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-yellow-300"></span>
+                JavaScript
+              </span>
+            </div>
+            <!-- 11 o'clock -->
+            <div class="absolute glass-card rounded-lg px-3 py-1.5 border border-slate-700/50 text-xs text-violet-300 font-medium animate-float shadow-lg z-30" style="top: -20px; left: 5%; animation-delay: 3.6s;">
+              <span class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-violet-300"></span>
+                WordPress
+              </span>
+            </div>
           </div>
         </div>
+
       </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce opacity-50">
+      <span class="text-xs text-slate-500 uppercase tracking-widest">Scroll</span>
+      <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+      </svg>
     </div>
   </section>
 
@@ -558,10 +689,10 @@
           <div class="flex items-start justify-between gap-4">
             <div>
               <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Role</p>
-              <h3 class="text-2xl font-semibold text-white mt-2">Programmer</h3>
+              <h3 class="text-2xl font-semibold text-white mt-2">Full Stack Dev</h3>
               <p class="text-sm text-slate-400 mt-2">RustyLopez • 3+ years</p>
             </div>
-            <span class="text-xs text-emerald-300 bg-emerald-900/30 px-3 py-1 rounded-full font-medium">Current</span>
+
           </div>
           <div class="mt-6 grid gap-3">
             <div class="flex items-start gap-3">
@@ -580,8 +711,11 @@
           <div class="mt-6 flex flex-wrap gap-2">
             <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">HTML</span>
             <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">PHP</span>
+            <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">Laravel</span>
             <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">MySQL</span>
             <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">JavaScript</span>
+            <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">Git</span>
+            <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">Bluehost</span>
             <span class="text-xs text-slate-300 bg-slate-800 px-2 py-1 rounded">Android Studio</span>
           </div>
         </div>
@@ -591,7 +725,7 @@
             <div>
               <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Role</p>
               <h3 class="text-2xl font-semibold text-white mt-2">UI/UX and Frontend</h3>
-              <p class="text-sm text-slate-400 mt-2">TabulateCRM • Remote • USA-based</p>
+              <p class="text-sm text-slate-400 mt-2">TabulateCRM • Remote • USA-based • 1 year</p>
             </div>
             <span class="text-xs text-cyan-300 bg-cyan-900/30 px-3 py-1 rounded-full font-medium">Remote</span>
           </div>
@@ -656,6 +790,16 @@
           </div>
           <p class="text-lg text-white font-semibold mt-3">WordPress • Android Studio • VS Code</p>
           <p class="text-sm text-slate-400 mt-2">Java, inventory tools, mobile utilities</p>
+        </div>
+        <div class="glass-card card-frame rounded-2xl p-5 skill-card tilt-card">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-rose-300/20 border border-rose-300/30 flex items-center justify-center text-rose-200 text-sm font-semibold">
+              DV</div>
+            <h3 class="text-sm uppercase tracking-[0.3em] text-slate-400">DevOps & Tools</h3>
+          </div>
+          <p class="text-lg text-white font-semibold mt-3">Git • Laravel • Bluehost</p>
+          <p class="text-sm text-slate-400 mt-2">Version control, deployment, and hosting</p>
         </div>
       </div>
     </div>
